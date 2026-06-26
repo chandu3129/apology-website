@@ -1,0 +1,20 @@
+{
+  "name": "apology-website",
+  "version": "1.0.0",
+  "description": "A beautiful apology website",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "cd server && node index.js",
+    "build": "echo Building...",
+    "dev": "cd server && node index.js"
+  },
+  "keywords": ["apology", "love", "relationship"],
+  "author": "chandu3129",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2",
+    "sqlite3": "^5.1.6"
+  }
+}
