@@ -99,8 +99,7 @@ def close_db(exception=None):
         db.close()
 
 
-@app.before_first_request
-def prepare_database():
+with app.app_context():
     init_db()
 
 
