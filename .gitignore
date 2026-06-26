@@ -3,6 +3,9 @@ node_modules/
 .env
 .DS_Store
 *.db
+__pycache__/
+*.py[cod]
 .vercel/
 dist/
 build/
+.vercel
