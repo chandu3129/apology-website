@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% block title %}Apology Website{% endblock %}
+
+{% block content %}
+<header class="hero">
+  <div class="hero-inner">
+    <h1>I'm Sorry, My Love.</h1>
+    <p>From being best friends in 2023 to standing together since September 29, 2025 — this page is my promise to make things right.</p>
+  </div>
+</header>
+
+<main class="content">
+  <section class="panel apology-panel">
+    <h2>My Apology</h2>
+    <p>I know I hurt you, and I am truly sorry. You have been my best friend, my partner, and the one I want by my side forever.</p>
+    <p>Every conversation we have had, every memory we built together, has made me realize how much you mean to me.</p>
+    <p>I promise to listen more, to care deeper, and to protect our love with everything I have.</p>
+  </section>
+
+  <section class="panel timeline-panel">
+    <h2>Our Story</h2>
+    <div class="timeline-grid">
+      {% for event in timeline %}
+      <article class="timeline-card">
+        <div class="timeline-icon">{{ event['icon'] }}</div>
+        <time>{{ event['event_date'] }}</time>
+        <h3>{{ event['title'] }}</h3>
+        <p>{{ event['description'] }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="panel reasons-panel">
+    <h2>Why I Love You</h2>
+    <div class="reasons-grid">
+      {% for reason in reasons %}
+      <article class="reason-card">
+        <p>{{ reason['reason'] }}</p>
+        <span>{{ reason['category'] }}</span>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="panel messages-panel">
+    <h2>Heartfelt Messages</h2>
+    <div class="message-grid">
+      {% for message in messages %}
+      <article class="message-card">"{{ message['message'] }}"</article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="panel memory-panel">
+    <h2>Shared Memories</h2>
+    <div class="memory-grid">
+      {% for memory in memories %}
+      <article class="memory-card">
+        <h3>{{ memory['title'] }}</h3>
+        <p>{{ memory['description'] }}</p>
+      </article>
+      {% endfor %}
+    </div>
+
+    <form class="memory-form" action="{{ url_for('add_memory') }}" method="post">
+      <h3>Add a Memory</h3>
+      <label>
+        Title
+        <input type="text" name="title" placeholder="Our evening together" required />
+      </label>
+      <label>
+        Description
+        <textarea name="description" rows="5" placeholder="What memory should we keep?" required></textarea>
+      </label>
+      <button type="submit">Save Memory</button>
+    </form>
+  </section>
+</main>
+{% endblock %}
