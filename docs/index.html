@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm Sorry, My Love ❤️</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      color: white;
+      padding: 60px 20px 40px;
+    }
+    header h1 {
+      font-size: 3em;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    header p {
+      font-size: 1.2em;
+      opacity: 0.95;
+    }
+    main {
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.18);
+      margin-bottom: 40px;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    h2 {
+      font-size: 2em;
+      color: #4f46e5;
+      margin-bottom: 24px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    h2::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: #4f46e5;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 999px;
+    }
+    .apology-message {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.14), rgba(118, 75, 162, 0.12));
+      padding: 28px;
+      border-radius: 18px;
+      border-left: 6px solid #4f46e5;
+      line-height: 1.8;
+      color: #2b2b2b;
+    }
+    .apology-message p {
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+    .timeline {
+      display: grid;
+      gap: 22px;
+    }
+    .timeline-item {
+      padding: 24px;
+      border-radius: 18px;
+      background: #f8f9ff;
+      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.12);
+      border-left: 6px solid #667eea;
+    }
+    .timeline-item h3 {
+      font-size: 1.25em;
+      margin-bottom: 10px;
+      color: #3f3d56;
+    }
+    .timeline-item .date {
+      color: #777;
+      margin-bottom: 12px;
+    }
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .reason-card {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 24px;
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+    .reason-card p {
+      font-size: 1.05em;
+      line-height: 1.75;
+    }
+    .messages-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .message-card {
+      background: white;
+      padding: 22px;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      border-left: 6px solid #764ba2;
+    }
+    .message-card p {
+      line-height: 1.8;
+      font-size: 1.05em;
+    }
+    footer {
+      text-align: center;
+      color: white;
+      padding: 30px 0;
+      font-size: 1.05em;
+    }
+    @media (max-width: 780px) {
+      header h1 { font-size: 2.2em; }
+      main { padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>I'm So Sorry, My Love ❤️</h1>
+      <p>This is my heartfelt apology. You have been my best friend since 2023, and my love since September 29, 2025.</p>
+    </header>
+    <main>
+      <section>
+        <h2>My Apology</h2>
+        <div class="apology-message">
+          <p>I know I hurt you, and I am deeply sorry. You have always been the person I trusted most, and I should have shown you more care and patience.</p>
+          <p>Our story means everything to me. The bond we built as friends in 2023 turned into something beautiful on September 29, 2025 — and I want to honor that forever.</p>
+          <p>From this day forward, I promise to listen, to learn, and to treat you the way you deserve. Your forgiveness matters more than anything.</p>
+        </div>
+      </section>
+      <section>
+        <h2>Our Journey</h2>
+        <div class="timeline" id="timeline"></div>
+      </section>
+      <section>
+        <h2>Why I Love You</h2>
+        <div class="reasons-grid" id="reasons"></div>
+      </section>
+      <section>
+        <h2>Sweet Messages</h2>
+        <div class="messages-grid" id="messages"></div>
+      </section>
+    </main>
+    <footer>
+      <p>Forever yours, with love and hope.</p>
+    </footer>
+  </div>
+  <script>
+    const timeline = [
+      {
+        date: 'January 15, 2023',
+        title: 'Best Friends Start',
+        description: 'Our beautiful journey began when we became best friends. You became the person I could always count on.',
+        emoji: '👯'
+      },
+      {
+        date: 'September 29, 2025',
+        title: 'Relationship Begins',
+        description: 'The day our hearts became one. Every memory since then has been precious.',
+        emoji: '💕'
+      },
+      {
+        date: 'June 26, 2026',
+        title: 'Forever Together',
+        description: 'I want us to grow stronger every day. I am committed to loving you better and making you smile.',
+        emoji: '💑'
+      }
+    ];
+    const reasons = [
+      'Your beautiful smile lights up my heart.',
+      'You laugh at my jokes even when they are silly.',
+      'Your kindness inspires me to be better.',
+      'You always listen and care about how I feel.',
+      'Your strength and patience amaze me.',
+      'You make ordinary days feel magical.',
+      'Your honesty and trust mean everything.',
+      'You bring warmth and joy into every moment.',
+      'Your support gives me courage.',
+      'I want a future with you by my side.'
+    ];
+    const messages = [
+      'I am sorry from the bottom of my heart.',
+      'You deserve the best version of me.',
+      'My love for you is real and forever.',
+      'I promise to keep learning and growing with you.',
+      'Please let me make this right.'
+    ];
+
+    const timelineContainer = document.getElementById('timeline');
+    timelineContainer.innerHTML = timeline.map(item => `
+      <div class="timeline-item">
+        <h3>${item.title}</h3>
+        <div class="date">${item.date}</div>
+        <p>${item.description}</p>
+      </div>
+    `).join('');
+
+    const reasonsContainer = document.getElementById('reasons');
+    reasonsContainer.innerHTML = reasons.map(reason => `
+      <div class="reason-card"><p>${reason}</p></div>
+    `).join('');
+
+    const messagesContainer = document.getElementById('messages');
+    messagesContainer.innerHTML = messages.map(message => `
+      <div class="message-card"><p>"${message}"</p></div>
+    `).join('');
+  </script>
+</body>
+</html>
